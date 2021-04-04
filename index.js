@@ -11,8 +11,8 @@ data.shift();
 const mapToCode = (data, i, keyIndexes, j) => {
   return {
     code: data[i][keyIndexes[j]],
-    descUA: data[i][keyIndexes[j] + 1],
-    descENG: data[i][keyIndexes[j] + 2],
+    descENG: data[i][keyIndexes[j] + 1],
+    descUA: data[i][keyIndexes[j] + 2],
     child: [],
   };
 };
@@ -64,6 +64,6 @@ const dataTree = [
   },
 ];
 
-const resultTree = buildTree(dataTree, data, data[0].length - 3, 3);
+const resultTree = buildTree(dataTree, data, data[0].length, 3);
 
 fs.writeFileSync(path.resolve(__dirname, 'data', 'result', 'resultTree.json'), JSON.stringify(resultTree, null, 2));
